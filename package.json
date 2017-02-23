@@ -2,19 +2,22 @@
   "name": "apps-for-dinner",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.16.1",
     "bookshelf": "^0.10.3",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.6.1",
     "express": "^4.14.1",
     "knex": "^0.12.7",
-    "pg": "^6.1.2"
+    "morgan": "^1.8.1",
+    "pg": "^6.1.2",
+    "serve-favicon": "^2.4.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
