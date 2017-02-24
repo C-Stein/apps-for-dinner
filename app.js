@@ -59,7 +59,7 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
+module.exports = app //need to export app so that the routes.spec.js can require it
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)
 })
