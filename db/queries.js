@@ -22,10 +22,14 @@ function getSides(mealId) {
     .select('sides.sideName')
 }
 
-  // return knex('recipes')
-  // .join('cooktypes', 'recipes.cooktypeId', 'cooktypes.cooktypeId')
-  // .select('*')
+function getProtein(mealId) {
+  return Meals()
+    .where('meals.mealId', parseInt(mealId))
+    .join('proteins', 'proteins.proteinId', 'meals.proteinId')
+    .select('proteins.proteinName')
+}
+
 
 module.exports = {
-  getAll, getSingle, getSides
+  getAll, getSingle, getSides, getProtein
 };

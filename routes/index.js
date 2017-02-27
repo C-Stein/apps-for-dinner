@@ -34,6 +34,18 @@ router.get('/sides/:id', function(req, res, next) {
   });
 });
 
+router.get('/protein/:id', (req, res, next) => {
+  queries.getProtein(req.params.id)
+  .then((meal)=> {
+    console.log("protein")
+    res.status(200).json(meal)
+  })
+  .catch((error) => {
+    console.log('doh!')
+    next(error)
+  })
+})
+
 
 
 module.exports = router;
