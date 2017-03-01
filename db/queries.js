@@ -1,4 +1,9 @@
-var knex = require('./knex.js');
+var {knex} = require('./knex.js');
+var bookshelf = require('bookshelf')(knex); 
+
+const Meal = require('../models/meals.js')
+
+//console.log("Meal", Meal)
 
 function Meals() {
   return knex('meals');
