@@ -4,7 +4,7 @@ var chai = require('chai');
 var should = chai.should();
 var chaiHttp = require('chai-http');
 var server = require('../app');
-var knex = require('../db/knex');
+var {knex} = require('../db/knex');
 
 
 
