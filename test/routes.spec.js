@@ -66,7 +66,7 @@ describe('API Routes', function() {
   });
 
   describe('GET /api/v1/sides/:id', function() {
-    it('should return sthe sides of a meal', function(done) {
+    it('should return the sides of a meal', function(done) {
       chai.request(server)
       .get('/api/v1/sides/3')
       .end(function(err, res) {
@@ -76,6 +76,21 @@ describe('API Routes', function() {
         res.body.length.should.equal(3);
         res.body[0].should.have.property('sideName')
         res.body[0].sideName.should.equal('potatoes');
+        done();
+      })
+    })
+  })
+
+  describe('GET /api/v1/protein/:id', function() {
+    it('should return the protein of a meal', function(done) {
+      chai.request(server)
+      .get('/api/v1/protein/1')
+      .end(function(err, res) {
+        res.should.have.status(200);
+        res.should.be.json;
+        res.body.should.be.a('object');
+        res.body.should.have.property('proteinName')
+        res.body.proteinName.should.equal('chicken');
         done();
       })
     })

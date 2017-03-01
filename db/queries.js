@@ -24,7 +24,7 @@ function getSides(mealId) {
 
 function getProtein(mealId) {
   return Meals()
-    .where('meals.mealId', parseInt(mealId))
+    .where('meals.mealId', parseInt(mealId)).first()
     .join('proteins', 'proteins.proteinId', 'meals.proteinId')
     .select('proteins.proteinName')
 }
