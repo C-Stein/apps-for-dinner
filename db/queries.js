@@ -16,8 +16,22 @@ function getAll() {
 }
 
 function getSingle(mealId) {
-  return Meals().where('mealId', parseInt(mealId)).first();
+  //return Meals().where('mealId', parseInt(mealId)).first();
+
+  return Meal
+  .where('mealId', parseInt(mealId))
+  .fetch()
+  // .then(function(model) {
+  //   console.log(model.attributes)
+  //   return model.attributes
+  // });
 }
+
+// User.where('id', 1).fetch({withRelated: ['posts.tags']}).then(function(user) {
+//   console.log(user.related('posts').toJSON());
+// }).catch(function(err) {
+//   console.error(err);
+// });
 
 function getSides(mealId) {
   return knex('sides')
